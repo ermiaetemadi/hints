@@ -58,7 +58,7 @@ class kmcc:
         For time series data exhibiting second-order stationarity, the typical number of data points required to estimate interaction strengths up to order Z = 3 is ~10^4 - 10^6 data points. For smaller datasets, it is advisable to choose a lower order of expansion, such as Z = 2 or Z = 1.
         """
         self.filepath = filepath
-        self.time_series = ts_array if filepath is None else self._load_data(filepath)
+        self.time_series = ts_array if filepath is None else self._load_data()
         self.dt = kwargs.get('dt', 1)
         self.order = kwargs.get('interaction_order', [0, 1])
         self.mode = kwargs.get('estimation_mode', 'drift')
